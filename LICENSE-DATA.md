@@ -12,7 +12,7 @@ Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
 Human-readable summary: https://creativecommons.org/licenses/by/4.0/
 
 Attribution: "tape-trials benchmark and audit, Mohammad Assem (2026),
-https://github.com/<owner>/tape-trials — corpus generated with Primus (Transformer Lab);
+https://github.com/YOUR_GITHUB_USERNAME/tape-trials — corpus generated with Primus (Transformer Lab);
 Varphi by Hassan El-Sheikha; AmpliPhi by Hassan El-Sheikha, Kevin Thevara and Youssef Abouzied."
 
 Code (everything under `benchmark-corpus/build/`, `eval-harness/`, `verification/`, and
