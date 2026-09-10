@@ -1,0 +1,3 @@
+reason  6a4560e7-8dc3-4f01-a52e-f87424de6218   serves 14B-R and 7B-R
+plain   2e3b7e98-d629-41ac-98a8-504b90ea63cc   serves 14B, 7B, 3B, 1.5B, 0.5B
+cot     657ba37f-c911-4d1c-943f-1fa22176fd61   serves 14B-CoT

@@ -1,0 +1,17 @@
+name: tape-trials-dataset-build
+resources:
+  cpus: 16
+  memory: 32
+  disk_space: 100
+  accelerators: T4:1
+run: python run.py
+minutes_requested: 240
+parameters:
+  n_programs: 500
+  master_seed: 20260819
+  rows_per_program: 4
+  max_steps: 20000
+  wall_limit_s: 120
+  workers: 16
+  pilot_recovery_budget: 40000
+  pilot_deadline_s: 900

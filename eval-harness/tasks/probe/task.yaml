@@ -1,0 +1,58 @@
+# s6.3 — engine-build hang probe.
+#
+# Not a study cell. Nothing this job produces goes into a result table; it
+# exists to answer why four cells have frozen on a held GPU and what to run them
+# under instead.
+#
+# The four hangs all stop at the same instruction. Every wedged log ends on the
+# import probe, and the next line of every runner is the `LLM(...)` constructor.
+# No rows read, no prompts rendered, nothing generated. So the trigger needs
+# none of the study's apparatus, and reproducing it costs an engine build rather
+# than the roughly 87 GPU-minutes a full cell costs before it can be declared
+# stuck.
+#
+# The configuration below is row 3R's, unchanged: same model, same context
+# length, same memory fraction, same card and vendor. Reproduction has to happen
+# under the failing configuration or the mitigation arms test nothing.
+#
+# L40S rather than the A10G this project now prefers, and deliberately. All four
+# hangs were on L40S; so was every other GPU cell here, which is exactly why
+# card type carries no evidence yet and why this probe must not change it. The
+# smaller cells routed to A10G are the discriminator on hardware, and they are
+# queued separately.
+#
+# py-spy is the reason this job can produce a diagnosis. It reads a frozen
+# process from outside, so a held GIL cannot block the dump, and it is what the
+# supervisor reaches for before it kills anything.
+name: tape-trials-s6.3-engine-probe
+
+resources:
+  cpus: 16
+  memory: 64
+  disk_space: 200
+  accelerators: "L40S:1"
+  compute_provider: aws
+
+setup: |
+  pip install -q vllm transformers
+  pip install -q py-spy
+
+run: python main.py
+
+parameters:
+  model: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+  rung: 7B-R
+  max_model_len: 20480
+  gpu_memory_utilization: 0.90
+  flashinfer_pin: 0.6.17
+  # Per-arm deadline. The slowest healthy weight load recorded in this study is
+  # about seven minutes on L40S for 14B, and the first arm pays a cold download
+  # on top; 18 minutes clears both with room and still stops a freeze in a
+  # fraction of the time the last one ran.
+  arm_minutes: 18
+  # Whole-job ceiling. Five arms at 18 minutes would be 90; 75 means the job
+  # declines to start an arm it cannot finish and says in the log which ones it
+  # dropped, rather than being cut off mid-dump.
+  total_minutes: 75
+
+minutes_requested: 120

@@ -1,0 +1,40 @@
+# MANIFEST: Benchmark corpus, prompts and build code
+
+32 files. Every line is `sha256  path  bytes`. A file marked
+`(cleaned)` had internal storage identifiers redacted for distribution; no
+result value in it was changed, and the hash is of the copy shipped here.
+
+```
+a4f612372998e1a8c672abdacba32db822480684a5c7ff7cb6c377c0c443c671  README.md  3158
+d7ad9f1ddd8f78ae3e1971dd6f38a09e704bdfbd5092d31be76eb114634f3b02  build/bootstrap.py  5295
+c068e631ff8819c4f318c735ff185f06b74be98fd360b54c63dbb0e1a288e3dd  build/gates.py  2129
+e80ba5866a1fbc3689372e2549221b27f3164545e9fe3dc6b8c816c467063db2  build/gen.py  13276
+99729c73c9a375532404409d9f0df4b2a373487593b304929fba4fe08bcd6904  build/lint.py  2603
+51bdbe8a4b3d01f4a35f31a9c9971367e07405b400abd35c7760a45c8e041a5a  build/main.py  27269
+d209da4abbab6ab9ef29325df1c7b04408890f0c65872e100e84f7d28ef00d3d  build/run.py  6498
+ead1ac0ab674d29a63bdf5fdb68af0755bb131f3776e8d568c56e9628bac520e  build/runner.py  6100
+819aa5fc966bfc59ae5d0bd365ac0a1b45b5bb6083fb119ef1f63aa150753005  build/selftest.py  6705
+f593835a01fd09037518ee2fe0fdf94516771f861471ccb3526627cf0f46e96d  build/split.py  5955
+154393c80b8dbb80ce972d613accb8f4ca9cda110002902d826e09c2ca96fdf0  build/task.yaml  332
+6236f664c6ba5fe4c9b31a9886d6c8fe601c53e6d1063d0e07b5f001ee8a9857  data-card.md  10759
+0918ea488df1f8a7db72539be05a2ae790169fa3ed99697313ad98d13ff42d06  eda/corpus_eda.md  3108
+386226e537d9ae997b14dce7547f5cc6e9ff1b69bc71ee8e627b9bcc22d6d500  eda/corpus_stats.json  3880
+7e9bd648a2db86d195788bd8c8a2025912b9f4d33fd290e3de82e646c29f57e4  eda/eda.py  13627
+fc138ea2ab2e2e3caf167e8f948c67289beb3ce35302603dba3181be8cde1622  prompts/C3_cot.txt  3110
+81b16855739150d65b6633dcc4424a9e44392f2aca1f8e3c35479215ffd68bd3  prompts/P1_frozen.txt  2973
+c771db1abcbd13ae2f0aad8622b11b437cf2fcc1bef5984a7d6830b6acbb261c  prompts/P1_frozen_v1.txt  3317
+0387d5d8ba8b4040a27724600069906add861d4d9a5244929082df4ee75efdb4  prompts/P2_reference_card.spec.txt  3178
+7806bb0988b42e6c45e8398e9539fdcaed7f167dabb7a2eb55735b47b1d57884  prompts/P2_reference_card.txt  3763
+e7c563f8b663d09474b071f009c6bf3362358b74300b5db7f4fe2e1795ab8a21  prompts/P3_tutorial.spec.txt  3680
+cd557300f9db141e1e443f582ed716e576ae03e97a973d5908a9fe2152a2c7b4  prompts/P3_tutorial.txt  4265
+94fc4de383af1fd93473b12ea239cf1e70cd8974cb861b9a4b438ae56bf365e2  prompts/P4_formal_rules.spec.txt  3105
+0cc12abacdbe7c500c0efa441a80846c0db211414dd324051e70d8a193491a7a  prompts/P4_formal_rules.txt  3690
+8c47062c69b81fd93be18e6b3ddd25bdb4eb619f97e3f3f71875b8e6f0b69162  prompts/P5_inverted.spec.txt  3047
+eebe3f0433f48ed465192a0dd2afdbc113da360bcd8652bcbfdb8e9783ec1ce5  prompts/P5_inverted.txt  3632
+97d251acd3ee3b6f6061b5951dcf839dd1c237bbd6a0748eb2a99ebe36649499  prompts/P6_confidence.txt  3427
+26a1c0bf89681a26288287964e8d42a28c8bbd439fee25f431c50d703c9c0a98  prompts/README.md  5046
+330c9515e059ff21da3fead5b26443167ee1b78e1abb6f2602851fd669308d16  prompts/build_variants.py  12633
+81a02d8166394243990ea8a7fb6163f285574c4213c40e0072b68a1df48804ed  splits/dev.jsonl  159541
+01d2069e6081876d2b2caf36f0f204b3f1c0020436bf7a1077132597bc00c25b  splits/public.jsonl  982487
+7ebe3db6a276ef020de4ad37205e6606bc2a3cbb0e3ccf7ae25974e9c3aa1fd3  splits/splits_manifest.json  2251  (cleaned)
+```

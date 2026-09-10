@@ -1,0 +1,17 @@
+# --- the sealed holdout must never be committed -------------------------------
+sealed-holdout/private.jsonl
+**/private.jsonl
+**/transcripts_*_private.jsonl
+**/*_private.jsonl
+**/private/
+
+# --- the machine-generated paper build is withheld pending revision -----------
+core/paper/paper.tex
+core/paper/paper.pdf
+core/paper/arxiv.sty
+
+# --- python / editor noise -------------------------------------------------------
+__pycache__/
+*.pyc
+.venv/
+.DS_Store

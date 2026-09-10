@@ -1,0 +1,47 @@
+# MANIFEST: Evaluation harness and job code
+
+39 files. Every line is `sha256  path  bytes`. A file marked
+`(cleaned)` had internal storage identifiers redacted for distribution; no
+result value in it was changed, and the hash is of the copy shipped here.
+
+```
+946f52501bdaf4ec06872708cb2c0b1e3491a5f57e6ea5fb795084e6eebb40df  README.md  2701
+c989e00ce76d95cfd3613395f7e4d498b8cb27625c62a31f7fb2ff21e5cda592  continuation.py  5030
+167a650ffd64bd4e02ff4aeb197cab9103cb02477808ef234548b60162007888  harness/mocks.py  3846
+ee63cf76d109eb60ccefc8b2093a1460675ccedab3dbe1f98645699f78c7e41a  harness/parse.py  5229
+1970d21a1a71e7e0403f1230b9afa71abdda6a74b85753511d726cb93a613fae  harness/score.py  15319
+82c3df01854f12ae34311cbf201ed1a3a317e53232887c22361ea54c1fc0380d  harness/test_harness.py  9245
+e095fd0dd8e6351d0c975baf9263f2f341ce72936662119f0651bf6fbeae6d31  pseudocode.py  8293
+216d5696e634636044ca079376b6d6577e9ed5d1f44115c82a1cfcdbc01b69e8  shared/calib_metrics.py  8330
+84a46492c44b979549af2d6826533ec29f500729dffbf7a01072440f033c472f  shared/card_fit.py  4480
+a6a0424c7f43b9ae1e7693e2319564a13cf42506f2b0e3212243b88badb5af46  shared/oc_gate.py  10228
+35ae89ec30d45ee29b04dcdc64859d26896e880d5d4c5a62bc991449114f432a  shared/oc_gate_selftest.py  5127
+0b0340793994911892bed50989efc74ee7966da7024ac1515dc98cb932e9dc08  shared/serving.py  21408
+62659d7b46de1cce515728bfc6985c9fe100d381da9eb3fb75b7a671ac953eaa  shared/supervise.sh  10586
+f85fa6b03f1ed523fef4cd4409bb1092a6d64f21e350537e05c79108eef090d3  shared/verify_shared.py  1451
+362d7641393a7373f2be7c6fe1934d34dc7b0b17ca20e9719bf0d943edc75c48  shared/watchdog_limit.py  3470
+3e689f8478d51355e1bdbc6508500bd0cd6f5c762b0c409133963a1a47c47370  tasks/calibration/README.md  5311
+a047274e43a70897123b91d724e8fbb8b283936b10528fa6e20488f080b3085d  tasks/calibration/assemble-c8.sh  1172
+4ae7ffdbf5f9e50161b593e8d7dfaa11572940601376e449fa7f00991c28c532  tasks/calibration/main.py  24243
+6a4b38ecc0eb47f180e34e37dc80f72916be5d33119d99ce42dc5018eaee208b  tasks/calibration/selftest.py  9406
+429b45dc6a91e34a87cd853ba9e829f12c621ecb6ce681b25d3811a973bc82d1  tasks/calibration/task.plain.yaml  2232
+aacbfd3d4a3160a72088a4016c3a2f9f6ba7014bdc25f45e905ea04d52a02672  tasks/calibration/task.reason.yaml  2257
+2bce81a2b35daedc5900ae8564ad2c16d4e4582775e81a0cf54bdd5b5e6b55f9  tasks/holdout/TASK_IDS.txt  209
+28888ea0807fd3a833192efbdcb9a68c69d8978d873d365b5033fdfea3f2848c  tasks/holdout/main.py  24246
+5b61c5e5c6f02ae91472efa713e2fa9fa60ddfab226f4c2a204570bbd8d31002  tasks/holdout/task.cot.yaml  1158
+cb6abb232430dd26ca0c4a2da5f4c62008a61c9d9f3ac638910f40af65f702d7  tasks/holdout/task.plain.yaml  1361
+074ea4d4afe93b860756018d404ca9e15ff98e06e01def2b2ebbb7ef7ef2696d  tasks/holdout/task.reason.yaml  1214
+4867cbe07cd68abd61a01cb21cf8bac45162ceb2fb8c29f88a1b3bfb8dd2f195  tasks/paraphrase/README.md  2630
+607e4d81f5bfed37eeb2eb9eeb4ab47b3aec1095b9620763d3400a3d0a6ec8a0  tasks/paraphrase/main.py  39800
+183ea68629119dc7fb1a93a4e225a5a41894dff2b1e91f39b298bd8bd6daa033  tasks/paraphrase/task.plain.yaml  1301
+79a30662b0b1c8b0c9b1ada13eb25dedfbba1b3b43ca701dcd52b389519338c1  tasks/paraphrase/task.reason.yaml  1550
+976b5ff86ad951730b0c34b1d3c9dbcd25c54e2ab1c9cdd63e8041bab54796be  tasks/probe/assemble-probe.sh  995
+549a39f5c58cb43f25351fb7e86d56ae957539f58d84bd5d6811b51082b05a92  tasks/probe/engine_probe.py  6122
+08649a056ae665869e072b09c3162cd7e66d3d3c544dd39379bece50db4622a2  tasks/probe/main.py  16609
+740cf2b191fbb174055db4ae19c9b90bf93ca73377bc636b268d5e250d2a61f6  tasks/probe/task.yaml  2324
+81bc91398da47bd9997574acc045732304bfda9f922a5264eb4a950423106036  tasks/temperature/README.md  4932
+3ed14cb57b2b9f15abe9327222b2841e2d146936bee4e1a0b6b53bc267ae23f5  tasks/temperature/main.py  43428
+25281920c6cdb92a8b6b7582d9e0546a443ea12322ac5169f74af78767ac03df  tasks/temperature/selftest.py  7703
+ac35f506a3bdff54328a8559441db2a8126a2d5fc08286a2a1cf57dc41e27950  tasks/temperature/task.plain.yaml  1669
+2e1f61c53b5ad56b354ad539303ef778c5177842c062044123f42486d9ed7f00  tasks/temperature/task.reason.yaml  2035
+```

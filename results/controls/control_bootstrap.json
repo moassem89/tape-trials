@@ -1,0 +1,58 @@
+{
+  "interpreter": "/root/aphi-venv/bin/python",
+  "steps": [
+    {
+      "name": "uv version",
+      "argv": [
+        "/root/.local/bin/uv",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout_tail": "uv 0.12.5 (x86_64-unknown-linux-gnu)\n",
+      "stderr_tail": "",
+      "seconds": 0.0
+    },
+    {
+      "name": "uv venv 3.13",
+      "argv": [
+        "/root/.local/bin/uv",
+        "venv",
+        "--python",
+        "3.13",
+        "/root/aphi-venv"
+      ],
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": "Downloading cpython-3.13.15-linux-x86_64-gnu (download) (33.2MiB)\n Downloaded cpython-3.13.15-linux-x86_64-gnu (download)\nUsing CPython 3.13.15\nCreating virtual environment at: aphi-venv\n",
+      "seconds": 1.4
+    },
+    {
+      "name": "uv pip install toolchain",
+      "argv": [
+        "/root/.local/bin/uv",
+        "pip",
+        "install",
+        "--python",
+        "/root/aphi-venv/bin/python",
+        "ampliphi==1.0.0",
+        "varphi-python==2.0.6"
+      ],
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": "Using Python 3.13.15 environment at: aphi-venv\nResolved 14 packages in 97ms\nDownloading pygments (1.2MiB)\n Downloaded pygments\nPrepared 14 packages in 131ms\nInstalled 14 packages in 12ms\n + ampliphi==1.0.0\n + annotated-doc==0.0.5\n + antlr4-python3-runtime==4.13.2\n + markdown-it-py==4.2.0\n + mdurl==0.1.2\n + prompt-toolkit==3.0.53\n + pygments==2.21.0\n + questionary==2.1.1\n + rich==15.0.0\n + shellingham==1.5.4\n + typer==0.27.1\n + varphi-devkit==2.0.6\n + varphi-python==2.0.6\n + wcwidth==0.8.2\n",
+      "seconds": 0.5
+    },
+    {
+      "name": "probe /root/aphi-venv/bin/python",
+      "argv": [
+        "/root/aphi-venv/bin/python",
+        "-c",
+        "import sys; from ampliphi.utils import get_ast; from varphi_python import VarphiToPythonCompiler; print(sys.version.split()[0])"
+      ],
+      "returncode": 0,
+      "stdout_tail": "3.13.15\n",
+      "stderr_tail": "",
+      "seconds": 0.3
+    }
+  ]
+}
