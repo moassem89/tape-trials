@@ -9,7 +9,7 @@ authors:
 version: 0.1.0
 date-released: 2026-09-10
 license: MIT
-repository-code: "https://github.com/git push -u origin main/tape-trials"
+repository-code: "https://github.com/yourusername/tape-trials"
 keywords:
   - language models
   - program execution
