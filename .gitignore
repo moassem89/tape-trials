@@ -5,11 +5,6 @@ sealed-holdout/private.jsonl
 **/*_private.jsonl
 **/private/
 
-# --- the machine-generated paper build is withheld pending revision -----------
-core/paper/paper.tex
-core/paper/paper.pdf
-core/paper/arxiv.sty
-
 # --- python / editor noise -------------------------------------------------------
 __pycache__/
 *.pyc

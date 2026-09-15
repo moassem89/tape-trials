@@ -5,9 +5,10 @@ Each package directory carries a MANIFEST.md whose lines are `sha256  path  byte
 This script recomputes every hash and reports matches, mismatches, files the
 manifest lists that are absent, and files present but unlisted.
 
-Two absences are expected in the public repository and are reported as WITHHELD
-rather than MISSING: the sealed holdout split (`sealed-holdout/private.jsonl`) and
-the machine-generated paper build (`core/paper/paper.tex`, `paper.pdf`, `arxiv.sty`).
+One absence is expected in the public repository and is reported as WITHHELD
+rather than MISSING: the sealed holdout split (`sealed-holdout/private.jsonl`).
+Everything else, including the machine-generated paper draft, ships unmodified so
+that its recorded hashes verify.
 """
 from __future__ import annotations
 
@@ -20,9 +21,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 WITHHELD = {
     "sealed-holdout/private.jsonl": "sealed holdout — never published (see README)",
-    "core/paper/paper.tex": "machine-generated draft under revision (see README)",
-    "core/paper/paper.pdf": "machine-generated draft under revision (see README)",
-    "core/paper/arxiv.sty": "carries the generator's watermark; withheld with the draft",
 }
 PACKAGES = ["benchmark-corpus", "core", "eval-harness", "results", "sealed-holdout"]
 

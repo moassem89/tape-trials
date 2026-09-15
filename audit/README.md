@@ -34,4 +34,4 @@ Claims in these documents are graded by how independent the evidence is, stronge
 
 ## What is not here
 
-The Primus stage report and export checklists are working documents kept outside the repository; their substance is summarized in `06`. The sealed holdout, the private-split transcripts and the watermarked generated paper are withheld by design (see the top-level README).
+The Primus stage report and export checklists are working documents kept outside the repository; their substance is summarized in `06`. The sealed holdout and the private-split transcripts are withheld by design (see the top-level README). The generated paper itself IS published, unrevised, at `core/paper/paper.pdf` — every finding below cites a section or table of it, so you can check the audit against its subject.

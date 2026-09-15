@@ -4,7 +4,7 @@ Source: the reproduction kit Primus produced (`repro.tar.gz`), received 2026-08-
 
 ## Integrity
 
-Every file listed in the five package manifests verifies. Recomputing sha256 for all 107 manifest entries: 107 match, 0 mismatch, 0 missing. (`verification/verify_manifests.py` repeats this check; in this public repository it reports the sealed holdout and the watermarked paper build as withheld rather than missing.)
+Every file listed in the five package manifests verifies. Recomputing sha256 for all 107 manifest entries: 107 match, 0 mismatch, 0 missing. (`verification/verify_manifests.py` repeats this check; in this public repository the sealed holdout is the one entry reported as withheld rather than missing.)
 
 | Package | Manifest entries | Verified | On disk but unlisted |
 |---|---|---|---|
@@ -13,6 +13,8 @@ Every file listed in the five package manifests verifies. Recomputing sha256 for
 | eval-harness | 39 | 39 | — |
 | results | 23 | 23 | — |
 | sealed-holdout | 2 | 2 | — |
+
+**Publication note (2026-09-15).** The machine-generated draft (`core/paper/paper.tex`, `paper.pdf`, `arxiv.sty`) is published in this repository unmodified, watermark intact, with Transformer Lab's written permission. Shipping it byte-identical is what lets `verification/verify_manifests.py` confirm all 12 core entries; the only file withheld anywhere in the repository is the sealed holdout split.
 
 `splits/splits_manifest.json` is present and used by the paper but is not covered by `benchmark-corpus/MANIFEST.md`. Nit (F6): add it, so the split definition is inside the provenance record rather than beside it.
 
