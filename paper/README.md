@@ -1,7 +1,7 @@
 # The revised paper
 
 **Tracing or Guessing? How a No-Explanation Prompt Hides Execution Ability in Language
-Models** — Mohammad Assem and Zehao Fan (University of Toronto). Under preparation for
+Models** — Mohammad A. Mahmoud and Zehao Fan (University of Toronto). Under preparation for
 submission to TMLR.
 
 `tracing-or-guessing.pdf` is the preprint build. `main.tex` builds both versions from one

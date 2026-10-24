@@ -11,7 +11,7 @@ provided you give appropriate credit, link to the license, and indicate if chang
 Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
 Human-readable summary: https://creativecommons.org/licenses/by/4.0/
 
-Attribution: "tape-trials benchmark and audit, Mohammad Assem (2026),
+Attribution: "tape-trials benchmark and audit, Mohammad A. Mahmoud (2026),
 https://github.com/moassem89/tape-trials — corpus generated with Primus (Transformer Lab);
 Varphi by Hassan El-Sheikha; AmpliPhi by Hassan El-Sheikha, Kevin Thevara and Youssef Abouzied."
 
