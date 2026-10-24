@@ -4,7 +4,7 @@ An independent review of the study that produced this benchmark. The study — c
 
 ## How to read it
 
-Start with [`00-findings-index.md`](00-findings-index.md): sixteen findings, each with a severity tag (rejection-level / required revision / nit) and three verdicts — is it wrong, does it matter for the claims, what would fix it — ranked by threat to the paper's headline claims rather than by how easy they were to spot. Every finding points at the document that supports it.
+Start with [`00-findings-index.md`](00-findings-index.md): twenty-five findings, each with a severity tag (rejection-level / required revision / nit) and three verdicts — is it wrong, does it matter for the claims, what would fix it — ranked by threat to the paper's headline claims rather than by how easy they were to spot. Every finding points at the document that supports it.
 
 | Doc | Session | What it establishes |
 |---|---|---|
@@ -16,22 +16,26 @@ Start with [`00-findings-index.md`](00-findings-index.md): sixteen findings, eac
 | [`06-s6-job-history.md`](06-s6-job-history.md) | 1–2 | Provenance reconstruction from the agent's job records and stage report |
 | [`07-language-footprint.md`](07-language-footprint.md) | 2b | Dated public footprint of Varphi/AmpliPhi versus the models' training cutoffs; toolchain drift; an independent-oracle opportunity |
 | [`08-primus-reply-assessment.md`](08-primus-reply-assessment.md) | 2b | The agent's own self-assessment of a toolchain change, verified and corrected |
+| [`09-export-verification-and-revision.md`](09-export-verification-and-revision.md) | 3–4 | Every remaining number recomputed from the agent's full run-record export; the parser defect (F21) and its correction; an independent cold review and what was adopted from it |
+| [`10-citation-verification.md`](10-citation-verification.md) | 3 | All 33 references checked: none fabricated, nine misattributed |
+| [`reanalysis-2026-10-24/`](reanalysis-2026-10-24/) | 3–4 | The scripts behind the revised paper's changed numbers |
 
 ## Method and tooling, disclosed
 
 The audit was designed and directed by Mohammad Assem and carried out in sessions with Claude (Anthropic) as an analysis assistant, working directly on the kit's files: reading code, running the shipped self-tests and harness, recomputing statistics, and re-scoring raw transcripts. The rule throughout was *verify, don't summarize*: a claim counts as checked only when a script or a quoted line of code backs it. The scripts that do the recomputation are in [`../verification/`](../verification/) and run without a GPU. The agent's own statements about its work — job cards, its stage report, its reply to a toolchain change — were treated as claims too and checked the same way (`06`, `08`).
 
-Two conventions worth knowing. Finding numbers (F1–F16) are stable across sessions so cross-references never rot; when a finding is corrected or downgraded, the correction is recorded in place rather than by renumbering. And the audit's own mistakes stay in the record: session 1 overstated one confound on the strength of a flawed data collapse, session 2 caught it, and both the wrong table and the correction are here.
+Two conventions worth knowing. Finding numbers (F1–F25) are stable across sessions so cross-references never rot; when a finding is corrected or downgraded, the correction is recorded in place rather than by renumbering. And the audit's own mistakes stay in the record: session 1 overstated one confound on the strength of a flawed data collapse, session 2 caught it, and both the wrong table and the correction are here.
 
 ## Evidence levels
 
 Claims in these documents are graded by how independent the evidence is, strongest first:
 
-1. **File level, independently recomputed** — raw model output re-scored here through audited code (Tables 1–3, Figure 1, Table 4's 14B-R row, §10, clustering, the 8,756-row denominator).
-2. **Job level** — metrics on the agent's completed-job records, cross-checked against the paper (Tables 4–5 in part, §5, §7).
-3. **Report level** — the agent's own stage report, which shares an author with the paper and therefore guards only against transcription error (Figure 2's slopes, §8's intervals, the remaining Table 4/5 rows).
-4. **Unsourced above the paper itself** — currently the §6 control readings (C4 pseudocode at plain rungs, C6 partial-trace), pending export from the agent's workspace.
+1. **File level, independently recomputed** — raw model output re-scored here (every table and figure of the revised paper, including the paraphrase, repeat, confidence and control batteries for every cell with transcripts).
+2. **Code level** — the agent's analysis code re-run unchanged on its inputs (paraphrase intervals, confidence comparison, failure classifier).
+3. **Run-summary level** — two results whose per-row records were not retained: the 14B-R confidence cell's original run, and the plain-rung control scores (job-card aggregates). The paper says so where it uses them.
+
+Re-running a parser is not an independent check of parsing. Level 1 originally re-used the released parser, which is how the F21 defect survived two sessions; it was found by an independent re-implementation of answer extraction.
 
 ## What is not here
 
-The Primus stage report and export checklists are working documents kept outside the repository; their substance is summarized in `06`. The sealed holdout and the private-split transcripts are withheld by design (see the top-level README). The generated paper itself IS published, unrevised, at `core/paper/paper.pdf` — every finding below cites a section or table of it, so you can check the audit against its subject.
+The Primus stage report and export checklists are working documents kept outside the repository; their substance is summarized in `06`. The sealed holdout and the private-split transcripts are withheld by design (see the top-level README). The generated paper itself IS published, unrevised, at `core/paper/paper.pdf`; the human-revised paper is in `paper/` — every finding below cites a section or table of it, so you can check the audit against its subject.

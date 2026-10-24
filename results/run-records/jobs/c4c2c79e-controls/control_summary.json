@@ -1,0 +1,62 @@
+{
+  "public_rows": 1180,
+  "c4": {
+    "attempted": 240,
+    "verified": 240,
+    "failed": 0,
+    "by_tier": {
+      "T2": 48,
+      "T5": 42,
+      "T3": 84,
+      "T4": 50,
+      "T1": 16
+    },
+    "by_category": {
+      "arrays": 44,
+      "bounded_loops": 48,
+      "branching": 31,
+      "decision": 48,
+      "procedures": 40,
+      "straightline": 29
+    }
+  },
+  "c6": {
+    "attempted": 452,
+    "verified": 230,
+    "excluded": 222,
+    "exclusion_reasons": {
+      "best cut leaves 1.00 of the trace": 47,
+      "best cut leaves 0.98 of the trace": 35,
+      "best cut leaves 0.99 of the trace": 31,
+      "best cut leaves 0.97 of the trace": 37,
+      "best cut leaves 0.95 of the trace": 22,
+      "best cut leaves 0.90 of the trace": 10,
+      "best cut leaves 0.91 of the trace": 5,
+      "best cut leaves 0.92 of the trace": 8,
+      "best cut leaves 0.93 of the trace": 13,
+      "best cut leaves 0.89 of the trace": 5,
+      "best cut leaves 0.96 of the trace": 4,
+      "best cut leaves 0.94 of the trace": 3,
+      "best cut leaves 0.85 of the trace": 2
+    },
+    "by_tier": {
+      "T5": 104,
+      "T4": 126
+    },
+    "median_suffix_share": 0.3747,
+    "suffix_share_range": [
+      0.0145,
+      0.8494
+    ]
+  },
+  "config": {
+    "c4_fraction": 0.2,
+    "seed": 20260819,
+    "max_steps": 20000,
+    "wall_limit_s": 120,
+    "c6_tiers": "T4,T5",
+    "max_suffix_share": 0.85,
+    "workers": 16
+  },
+  "wall_seconds": 510.2
+}

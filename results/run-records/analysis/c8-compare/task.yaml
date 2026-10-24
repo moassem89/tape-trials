@@ -1,0 +1,26 @@
+# s6.3 — the cross-rung calibration comparison.
+#
+# No generation and no accelerator. Every input was produced by a C8 cell that
+# already ran; the work here is arithmetic and bootstrap resampling over a few
+# hundred kilobytes of saved rows, which is one core for a couple of minutes.
+# Asking for a card would hold one of the two this project may use at a time,
+# and the remaining battery cells need both.
+#
+# The job refuses to start unless it can reproduce, exactly, every scalar each
+# bundled cell recorded from that cell's own per-row file. The metric code is a
+# verbatim copy of the C8 runner's, so a disagreement means the analysis and the
+# runs are not describing the same thing.
+name: tape-trials-s6-3-c8-compare
+
+resources:
+  cpus: 4
+  memory: 16
+  disk_space: 50
+  compute_provider: aws
+
+setup: |
+  pip install -q --upgrade pip
+
+run: python main.py
+
+minutes_requested: 30

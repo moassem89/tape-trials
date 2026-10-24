@@ -1,0 +1,32 @@
+{
+ "n_jobs": 110,
+ "gpu_minutes_wall_clock": 4874.1,
+ "by_vendor_gpu_minutes": {
+  "nebius": 1461.7,
+  "aws": 3353.4,
+  "gcp": 0.5,
+  "Runpod": 58.5
+ },
+ "by_card_gpu_minutes": {
+  "null": 0,
+  "T4:1": 110.1,
+  "L4:1": 86.3,
+  "A10G:1": 240.3,
+  "L40S:1": 4436.9,
+  "A100-40GB:1": 0.5
+ },
+ "by_vendor_jobs": {
+  "nebius": 13,
+  "aws": 94,
+  "gcp": 1,
+  "Runpod": 2
+ },
+ "by_card_jobs": {
+  "null": 20,
+  "T4:1": 4,
+  "L4:1": 10,
+  "A10G:1": 9,
+  "L40S:1": 66,
+  "A100-40GB:1": 1
+ }
+}

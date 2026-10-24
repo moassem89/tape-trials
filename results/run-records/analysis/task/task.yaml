@@ -1,0 +1,51 @@
+# s6.2 + s6.4 — subgroup structure and failure taxonomy.
+#
+# No generation happens here. Every reply this job reads was produced by an
+# earlier job: sixteen model-block cells, eight rungs against the sealed holdout
+# and the same eight against the public split. They ride in the bundle, all 23 MB
+# of them. An earlier build fetched them from shared storage on the node instead,
+# and the SDK returned an object-store URI rather than a local file, so the job
+# died on its first read; shipping them removes that failure mode outright.
+#
+# The job re-scores each saved reply with the same harness that produced the
+# recorded numbers, and refuses to continue if the re-score and the recorded
+# per-item file disagree by more than one row in any cell. Passing that gate is
+# what lets the failure taxonomy be read as a description of this study's runs
+# rather than of a second, differently-scored pass over them.
+#
+# Two things come out. The subgroup tables cut each cell seven ways — difficulty
+# tier, program category, executed-step quintile, program-length tercile,
+# changed-fraction tercile, whether the answer contains a boolean, whether it
+# contains an array — each with a whole-program cluster-bootstrap interval and a
+# gap to the cell's overall accuracy. The taxonomy sorts every failing row into
+# exactly one of ten named modes, ordered so the labels partition rather than
+# overlap, with per-tier mixes and example row ids.
+#
+# No accelerator is requested. The work is arithmetic over a few megabytes of
+# saved text: a pre-flight over three of the sixteen cells on real transcripts
+# finished in under a second of compute, and the bootstrap resampling that
+# dominates the full run is pure Python on one core. Asking for a card would
+# hold one of the two this project may use at a time, and the two robustness
+# batteries need both of them.
+name: tape-trials-s6-analysis
+
+resources:
+  cpus: 8
+  memory: 32
+  disk_space: 100
+  compute_provider: aws
+
+setup: |
+  pip install -q --upgrade pip
+
+run: python main.py
+
+parameters:
+  blocks: private,public
+  # Flag any subgroup axis whose best-to-worst spread reaches this, in accuracy
+  # points. Fifteen points is roughly the size of one tier step on the ladder's
+  # middle rungs, so a gap that large is a structural difference rather than
+  # sampling noise on a 586-row block.
+  gap_flag: 0.15
+
+minutes_requested: 45
