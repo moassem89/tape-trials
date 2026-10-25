@@ -36,6 +36,9 @@ preferred-citation:
     - family-names: Fan
       given-names: Zehao
       affiliation: "University of Toronto"
+    - family-names: El-Sheikha
+      given-names: Hassan
+      affiliation: "University of Toronto"
   year: 2026
   url: "https://github.com/moassem89/tape-trials"
 references:
