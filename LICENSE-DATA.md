@@ -13,7 +13,7 @@ Human-readable summary: https://creativecommons.org/licenses/by/4.0/
 
 Attribution: "tape-trials benchmark and audit, Mohammad A. Mahmoud (2026),
 https://github.com/moassem89/tape-trials — corpus generated with Primus (Transformer Lab);
-Varphi by Hassan El-Sheikha; AmpliPhi by Hassan El-Sheikha, Kevin Thevara and Youssef Abouzied."
+Varphi by Hassan El-Sheikha; Ampliphi by Hassan El-Sheikha, Kevin Thevara and Youssef Abouzied."
 
 Code (everything under `benchmark-corpus/build/`, `eval-harness/`, `verification/`, and
 `core/paper/figures/make_figures.py`) is licensed separately under the MIT License (`LICENSE`).

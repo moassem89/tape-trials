@@ -14,7 +14,7 @@ Start with [`00-findings-index.md`](00-findings-index.md): twenty-five findings,
 | [`04-review-statistics.md`](04-review-statistics.md) | 2 | Clustering machinery verified; the §7–§8 statistical claims examined; trivial baselines; the tier×category design named correctly |
 | [`05-item-verification.md`](05-item-verification.md) | 2b | Every headline table re-derived from raw model transcripts through the shipped scorer |
 | [`06-s6-job-history.md`](06-s6-job-history.md) | 1–2 | Provenance reconstruction from the agent's job records and stage report |
-| [`07-language-footprint.md`](07-language-footprint.md) | 2b | Dated public footprint of Varphi/AmpliPhi versus the models' training cutoffs; toolchain drift; an independent-oracle opportunity |
+| [`07-language-footprint.md`](07-language-footprint.md) | 2b | Dated public footprint of Varphi/Ampliphi versus the models' training cutoffs; toolchain drift; an independent-oracle opportunity |
 | [`08-primus-reply-assessment.md`](08-primus-reply-assessment.md) | 2b | The agent's own self-assessment of a toolchain change, verified and corrected |
 | [`09-export-verification-and-revision.md`](09-export-verification-and-revision.md) | 3–4 | Every remaining number recomputed from the agent's full run-record export; the parser defect (F21) and its correction; an independent cold review and what was adopted from it |
 | [`10-citation-verification.md`](10-citation-verification.md) | 3 | All 33 references checked: none fabricated, nine misattributed |
