@@ -269,5 +269,5 @@ that the revised paper supersedes.
 1fd8de829d11f4abba22cb6004a951a63f929c0cb234e8da94f942f907fca4fa  run-records/c8-original-14B-R/README.md  1290
 e7f7e12fb89fed79c6b0ec0c3c65b0ef8bf38bba64384d1b45e402698ed390c0  run-records/c8-original-14B-R/calibration_14B-R.json  6928
 495603ce05c43b59681242fe0e191c3ad2a99bae49764e46299a059442f2eea2  run-records/c8-original-14B-R/per_row_confidence_14B-R.jsonl  91632
-537872dd48bb76dfd0851d14b4df92bcf3831ceade28404b8e72d6bbc77c3b39  run-records/evidence/SUPERSEDED.md  2351
+fb5591ee3bf853e700753462ac437777b3579116561836831cdb7a4af8407cd4  run-records/evidence/SUPERSEDED.md  2370
 ```

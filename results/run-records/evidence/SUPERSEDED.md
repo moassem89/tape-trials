@@ -27,4 +27,5 @@ The entries a reader is most likely to compare, with their revised values:
 | E181 | 7B-R max adjacent drop 6.0; Q1–Q5 falls 7.8 (14B-R) and 9.4 (7B-R) | 4.4; 7.7 and 7.7 |
 | E183 | 14B-R P1 0.9454, P5 0.9916; 7B-R P3 0.7773, P5 0.9118 | 0.9538, 0.9958; 0.8361, 0.9160 |
 
-This table is not exhaustive. Pointed out by Zehao Fan's review of the paper (2 November 2026).
+This table is not exhaustive. The mismatch was pointed out in a co-author's review of the paper
+(2 November 2026).
