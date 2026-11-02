@@ -257,3 +257,17 @@ ad46f8ba32dcfeb428d7aedead7214b058a70712a4d7c7fd71711a723866bd54  corrected-per-
 bb3c31adcf0a912d8816da9979ec275f0d00164f3f0af7c74130a1d0f21b5605  corrected-per-item/7B_public__P4_formal_rules.jsonl  58881
 7ac3bf3e186263b72922aa6ea902397b4ace6d69fed65e3e720cb6430bdd928e  corrected-per-item/7B_public__P5_inverted.jsonl  58900
 ```
+
+## Added 2026-11-02
+
+`run-records/c8-original-14B-R/` holds the per-row scores of the original 14B-R confidence
+cell (job cbc1215f), copied from the agent's storage prefix `tape-trials/c8/`; Table 5's 14B-R
+row reproduces from them. `run-records/evidence/SUPERSEDED.md` marks the agent's ledger entries
+that the revised paper supersedes.
+
+```
+1fd8de829d11f4abba22cb6004a951a63f929c0cb234e8da94f942f907fca4fa  run-records/c8-original-14B-R/README.md  1290
+e7f7e12fb89fed79c6b0ec0c3c65b0ef8bf38bba64384d1b45e402698ed390c0  run-records/c8-original-14B-R/calibration_14B-R.json  6928
+495603ce05c43b59681242fe0e191c3ad2a99bae49764e46299a059442f2eea2  run-records/c8-original-14B-R/per_row_confidence_14B-R.jsonl  91632
+537872dd48bb76dfd0851d14b4df92bcf3831ceade28404b8e72d6bbc77c3b39  run-records/evidence/SUPERSEDED.md  2351
+```

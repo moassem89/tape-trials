@@ -45,7 +45,8 @@ Twenty-five findings, ranked by threat to the claims, each with a *wrong / matte
 benchmark-corpus/   corpus generator, six admission gates, prompt battery, public + dev splits, data card, EDA
 eval-harness/       parser (corrected; generated version kept), scorer, job runners, helpers, self-tests, CHANGES.md
 results/            recorded dev-sweep results, control stimuli, raw public-split transcripts,
-                    run-records/ (the agent's full run-record export, holdout removed) and
+                    run-records/ (the agent's full run-record export, holdout removed; its evidence
+                    ledger supports the draft, see run-records/evidence/SUPERSEDED.md) and
                     corrected-per-item/ (every public cell re-scored with the corrected parser)
 paper/              the human-revised paper (LaTeX source and preprint PDF)
 core/               reproduction notes, environment, seeds and hashes, model card,

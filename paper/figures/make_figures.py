@@ -43,7 +43,7 @@ for lab, _ in CFG:
                     va="center", fontsize=7.5, color=INK)
 ax.legend(title="plain, frozen prompt", title_fontsize=7.5, fontsize=7.5, frameon=False,
           loc="center right", bbox_to_anchor=(1.0, 0.36))
-ax.set_xscale("log"); ax.set_xticks(med); ax.set_xticklabels([f"{int(m):,}" for m in med]); ax.minorticks_off()
+ax.set_xscale("log"); ax.set_xticks(med); ax.set_xticklabels([f"{m:,.1f}" if m % 1 else f"{int(m):,}" for m in med]); ax.minorticks_off()
 ax.set_xlim(med[0] / 1.25, med[-1] * 2.2)
 ax.set_xlabel("Executed steps (quintile median, log scale)"); ax.set_ylabel("Exact-match accuracy (%)")
 ax.set_ylim(-3, 103)

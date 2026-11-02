@@ -12,7 +12,7 @@ generated file is kept verbatim as `harness/parse_as_generated.py`; its hash
 `CHANGES.md` and `audit/00-findings-index.md` (F21).
 
 ```
-33d222277aa2242c423206f75e5340336e80966fb3674bd4f7549ac401445b86  CHANGES.md  1855
+ed460a8455073bc07f26db90ed1130187f151e4f9c22784949693db4fe5b370b  CHANGES.md  2702
 946f52501bdaf4ec06872708cb2c0b1e3491a5f57e6ea5fb795084e6eebb40df  README.md  2701
 c989e00ce76d95cfd3613395f7e4d498b8cb27625c62a31f7fb2ff21e5cda592  continuation.py  5030
 167a650ffd64bd4e02ff4aeb197cab9103cb02477808ef234548b60162007888  harness/mocks.py  3846
