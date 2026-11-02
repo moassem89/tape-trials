@@ -40,7 +40,7 @@ the corrected parser (F21). Hashes are of the copies shipped here.
 
 ```
 d96171429d1f961541c56487ea5878a66740418db20f55cb5e65e145be3c7741  run-records/EXPORT-README.md  3954
-a6727036b0c7f7f60d501481efa28985b105ef54bf26f825ddf70a548f3770ff  run-records/analysis/WAVES.md  58110
+214353b930d83bc63c8f77b4b93887d395842818ecfb0f014aeb09e773603d1d  run-records/analysis/WAVES.md  58128
 216d5696e634636044ca079376b6d6577e9ed5d1f44115c82a1cfcdbc01b69e8  run-records/analysis/_shared/calib_metrics.py  8330
 84a46492c44b979549af2d6826533ec29f500729dffbf7a01072440f033c472f  run-records/analysis/_shared/card_fit.py  4480
 478c6e05be3fb012ea839ed3ed08a1ff593e296d6ff3395fd1c4d3e7a6c7a43e  run-records/analysis/_shared/image-baseline.md  22027
@@ -209,7 +209,7 @@ fba965ade4b2c7bcaab2759ad13ba00a85c2086f795ba9addeba75eb5189fba1  run-records/pe
 fdc4e3afaa52135a045d394585725002c18c12a56445d56b9e121903e3522db5  run-records/per-item/per_item_7B_public.jsonl  231393
 ef9cc12b968c70d0c31c083eb245e4fe13d2fcb161c874e1773ff9361fc7ac35  run-records/s6-runs/s6.1-holdout.md  21397
 f4fbf64f9792ec191885ec08f2074467a3347b490368f3f6a772760f4be6201f  run-records/s6-runs/s6.2-s6.4-analysis.md  6368
-d0679edb775d92de4715c2645f7e0b861e4a38bd0a11dc9ebfa0be1258d9a687  run-records/s6-runs/s6.3-calibration.md  35752
+d1f78ccc29ea381b21ffb719e0c88bd4160f1b592c1173f2458367800c4152eb  run-records/s6-runs/s6.3-calibration.md  35761
 4bb8ad33ee4596e0d2e8fb5d48750c4fb13f7765bf0b645654f4b1d8ca6080c6  run-records/s6-runs/s6.5-robustness.md  36278
 964fbb96d9e9875420f2f51f73b965f7dc5701d5b1f718a7dfe8cecd8f836384  corrected-per-item/0_5B_public.jsonl  295593
 1443984bea1f0a266536b6f7ab1d4c960e96b5c09d9d0cfa392db17ffeac8e0d  corrected-per-item/14B-CoT_public.jsonl  284249
@@ -264,6 +264,9 @@ bb3c31adcf0a912d8816da9979ec275f0d00164f3f0af7c74130a1d0f21b5605  corrected-per-
 cell (job cbc1215f), copied from the agent's storage prefix `tape-trials/c8/`; Table 5's 14B-R
 row reproduces from them. `run-records/evidence/SUPERSEDED.md` marks the agent's ledger entries
 that the revised paper supersedes.
+`run-records/analysis/WAVES.md` and `run-records/s6-runs/s6.3-calibration.md` had a Transformer Lab
+staff member's e-mail address replaced by `[Transformer Lab staff]`; nothing else in them changed,
+and their hashes above are of the redacted copies.
 
 ```
 1fd8de829d11f4abba22cb6004a951a63f929c0cb234e8da94f942f907fca4fa  run-records/c8-original-14B-R/README.md  1290
