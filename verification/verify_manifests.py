@@ -37,7 +37,7 @@ def main() -> int:
     bad = 0
     for pkg in PACKAGES:
         man = ROOT / pkg / "MANIFEST.md"
-        entries = re.findall(r"^([0-9a-f]{64})\s+(\S+)\s+(\d+)\s*$", man.read_text(), re.M)
+        entries = re.findall(r"^([0-9a-f]{64})\s+(\S+)\s+(\d+)(?:\s+\(cleaned\))?\s*$", man.read_text(), re.M)
         ok = mismatch = withheld = missing = 0
         listed = set()
         for digest, rel, size in entries:
