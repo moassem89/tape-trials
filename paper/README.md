@@ -1,7 +1,7 @@
 # The revised paper
 
-**Tracing or Guessing? How a No-Explanation Prompt Hides Execution Ability in Language
-Models** — Mohammad A. Mahmoud, Zehao Fan and Hassan El-Sheikha (University of Toronto). Under preparation for
+**Tracing or Guessing? How an Answer-Only Prompt Can Hide Program-Execution Ability in
+Language Models** — Mohammad A. Mahmoud, Zehao Fan and Hassan El-Sheikha (University of Toronto). Under preparation for
 submission to TMLR.
 
 `tracing-or-guessing.pdf` is the preprint build. `main.tex` builds both versions from one

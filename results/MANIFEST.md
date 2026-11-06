@@ -1,11 +1,14 @@
 # MANIFEST: Recorded results
 
-23 files. Every line is `sha256  path  bytes`. A file marked
+245 files. Every line is `sha256  path  bytes`. A file marked
 `(cleaned)` had internal storage identifiers redacted for distribution; no
 result value in it was changed, and the hash is of the copy shipped here.
+A file marked `(added)` was not part of the generated kit (`STATUS.md`, which
+qualifies two sentences of `README.md`; 6 November 2026).
 
 ```
 43fbbe04f1193ce57af5ab622ca11f52bfad005177b03c592d5d7a0b7a86de4f  README.md  1900
+6eb8bce37433b0a554127862b11219509760ed6e71b0d3053adda4d23fde5c6c  STATUS.md  1270  (added)
 206a68c5de9ea924e93194f1a00a4474f0ff83a8655a6425aa06331415aaf02b  controls/control_bootstrap.json  2027
 139c98fce41746bd7268a4a1b42f2dbc7df3bba481fb078b26f03020af5b730f  controls/control_c4.jsonl  214117
 4c9a305711a5fa4de434b4db3c9ff3a3d89415501ff8f40029892e01b5fdbbcb  controls/control_c6.jsonl  193897

@@ -90,8 +90,9 @@ Answering all zeros peaks at 2.5% in T1 and is exactly zero from T3 upward. Ther
 are 1,932 distinct final answers over 1,964 rows and the commonest covers 0.15% of
 the corpus.
 
-Ten Ampliphi programs written by a student, and a pilot report of their outputs,
-were supplied as inputs. They are used only to confirm the public toolchain
+Ten Ampliphi programs from a pilot that preceded the study (drafted with Claude's
+assistance and approved by the first author, not written by a student as this card
+originally said), and a pilot report of their outputs, were supplied as inputs. They are used only to confirm the public toolchain
 matches the pilot's; they are not part of the corpus.
 
 ## Seeds and hashes
@@ -287,7 +288,7 @@ costs five samples.
 
 **No personal data.** The corpus is machine-generated from six category templates
 with a mechanical answer key. It contains no personal, sensitive or scraped
-content. The ten student-written programs supplied as inputs are used only as a
+content. The ten pilot programs supplied as inputs are used only as a
 toolchain cross-check and are not redistributed.
 
 **Third-party weights.** All eight configurations use published weights under their

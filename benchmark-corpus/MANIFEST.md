@@ -2,7 +2,10 @@
 
 32 files. Every line is `sha256  path  bytes`. A file marked
 `(cleaned)` had internal storage identifiers redacted for distribution; no
-result value in it was changed, and the hash is of the copy shipped here.
+result value in it was changed, and the hash is of the copy shipped here. A file
+marked `(corrected)` was edited after generation to fix an audit finding (F42: the
+pilot programs' attribution in `data-card.md`); the generated original is recoverable
+from this repository's git history.
 
 ```
 a4f612372998e1a8c672abdacba32db822480684a5c7ff7cb6c377c0c443c671  README.md  3158
@@ -16,7 +19,7 @@ ead1ac0ab674d29a63bdf5fdb68af0755bb131f3776e8d568c56e9628bac520e  build/runner.p
 819aa5fc966bfc59ae5d0bd365ac0a1b45b5bb6083fb119ef1f63aa150753005  build/selftest.py  6705
 f593835a01fd09037518ee2fe0fdf94516771f861471ccb3526627cf0f46e96d  build/split.py  5955
 154393c80b8dbb80ce972d613accb8f4ca9cda110002902d826e09c2ca96fdf0  build/task.yaml  332
-6236f664c6ba5fe4c9b31a9886d6c8fe601c53e6d1063d0e07b5f001ee8a9857  data-card.md  10759
+7dfeddbc49b909d2b166758af3fcd2f7c3149fddee924c044deba2cdf7e3e37c  data-card.md  10896  (corrected)
 0918ea488df1f8a7db72539be05a2ae790169fa3ed99697313ad98d13ff42d06  eda/corpus_eda.md  3108
 386226e537d9ae997b14dce7547f5cc6e9ff1b69bc71ee8e627b9bcc22d6d500  eda/corpus_stats.json  3880
 7e9bd648a2db86d195788bd8c8a2025912b9f4d33fd290e3de82e646c29f57e4  eda/eda.py  13627

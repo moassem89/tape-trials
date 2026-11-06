@@ -27,3 +27,11 @@ records in `results/` carry those terms alongside CC BY 4.0.
 
 The private holdout split is **not** released under any license; see
 `sealed-holdout/README.md` and `sealed-holdout/STATUS.md`.
+
+The language toolchain the answer key depends on, `ampliphi` 1.0.0 (Hassan El-Sheikha,
+Kevin Thevara and Youssef Abouzied) and `varphi-python` 2.0.6 (Hassan El-Sheikha), is
+published on PyPI **without a licence**. This repository therefore does not redistribute
+the wheels; `core/wheels/README.md` fetches them from PyPI and verifies their hashes. The
+corpus, which is the toolchain's output, is released here under CC BY 4.0 with the
+creators' knowledge as co-author and acknowledged contributors; redistribution of the
+wheels themselves will be added only with their written permission.

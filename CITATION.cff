@@ -30,7 +30,7 @@ abstract: >
   human-revised paper.
 preferred-citation:
   type: unpublished
-  title: "Tracing or Guessing? How a No-Explanation Prompt Hides Execution Ability in Language Models"
+  title: "Tracing or Guessing? How an Answer-Only Prompt Can Hide Program-Execution Ability in Language Models"
   authors:
     - family-names: Mahmoud
       given-names: Mohammad A.

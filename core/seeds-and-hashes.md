@@ -55,8 +55,10 @@ the canary says nothing about the holdout.
 
 ## Pinned toolchain
 
-The answer key's toolchain is vendored in `wheels/` so the exact versions remain
-installable after upstream moves on (`pip install wheels/*.whl`, Python 3.13):
+The answer key's toolchain is pinned to these two PyPI releases (Python 3.13). The
+wheels are not redistributed in this kit, because both packages are published without a
+licence (see `LICENSE-DATA.md`); `wheels/README.md` gives the three commands that fetch
+them from PyPI, verify them against these digests and install them:
 
 | Wheel | sha256 |
 |---|---|
