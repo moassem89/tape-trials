@@ -1,8 +1,16 @@
 # MANIFEST: Evaluation harness and job code
 
-41 files. Every line is `sha256  path  bytes`. A file marked
+43 files. Every line is `sha256  path  bytes`. A file marked
 `(cleaned)` had internal storage identifiers redacted for distribution; no
 result value in it was changed, and the hash is of the copy shipped here.
+
+**Revision 2026-11-06 (audit finding F10).** The three self-tests that assumed the
+original workspace layout now run from this repository: `tasks/calibration/selftest.py`
+falls back to the kit layout `(corrected)`, `tasks/assemble-public.sh` performs the
+generated assembly script's job against the kit layout `(added)`, and the s6 reference
+file `shared/ref/cbc1215f_calibration_14B-R.json` that `oc_gate.py` and its self-test
+expect is shipped `(added)`, copied byte-identically from
+`results/run-records/analysis/ref/`. See `CHANGES.md`.
 
 **Revision 2026-10-24 (audit finding F21).** `harness/parse.py` was corrected: the
 generated extractor tracked brace depth over the whole reply, so a `{` quoted inside a
@@ -12,7 +20,7 @@ generated file is kept verbatim as `harness/parse_as_generated.py`; its hash
 `CHANGES.md` and `audit/00-findings-index.md` (F21).
 
 ```
-ed460a8455073bc07f26db90ed1130187f151e4f9c22784949693db4fe5b370b  CHANGES.md  2702
+9f1de8d820669c1b43020f3db1fefa94a4d02c07b99a662c8c59c2a72b71af23  CHANGES.md  3989
 946f52501bdaf4ec06872708cb2c0b1e3491a5f57e6ea5fb795084e6eebb40df  README.md  2701
 c989e00ce76d95cfd3613395f7e4d498b8cb27625c62a31f7fb2ff21e5cda592  continuation.py  5030
 167a650ffd64bd4e02ff4aeb197cab9103cb02477808ef234548b60162007888  harness/mocks.py  3846
@@ -32,7 +40,7 @@ f85fa6b03f1ed523fef4cd4409bb1092a6d64f21e350537e05c79108eef090d3  shared/verify_
 3e689f8478d51355e1bdbc6508500bd0cd6f5c762b0c409133963a1a47c47370  tasks/calibration/README.md  5311
 a047274e43a70897123b91d724e8fbb8b283936b10528fa6e20488f080b3085d  tasks/calibration/assemble-c8.sh  1172
 4ae7ffdbf5f9e50161b593e8d7dfaa11572940601376e449fa7f00991c28c532  tasks/calibration/main.py  24243
-6a4b38ecc0eb47f180e34e37dc80f72916be5d33119d99ce42dc5018eaee208b  tasks/calibration/selftest.py  9406
+bd926c3778d19c2347bfab16c7de77b29c374b8e04e277c7c21a5b166e70c29f  tasks/calibration/selftest.py  9782  (corrected)
 429b45dc6a91e34a87cd853ba9e829f12c621ecb6ce681b25d3811a973bc82d1  tasks/calibration/task.plain.yaml  2232
 aacbfd3d4a3160a72088a4016c3a2f9f6ba7014bdc25f45e905ea04d52a02672  tasks/calibration/task.reason.yaml  2257
 2bce81a2b35daedc5900ae8564ad2c16d4e4582775e81a0cf54bdd5b5e6b55f9  tasks/holdout/TASK_IDS.txt  209
@@ -53,4 +61,6 @@ cb6abb232430dd26ca0c4a2da5f4c62008a61c9d9f3ac638910f40af65f702d7  tasks/holdout/
 25281920c6cdb92a8b6b7582d9e0546a443ea12322ac5169f74af78767ac03df  tasks/temperature/selftest.py  7703
 ac35f506a3bdff54328a8559441db2a8126a2d5fc08286a2a1cf57dc41e27950  tasks/temperature/task.plain.yaml  1669
 2e1f61c53b5ad56b354ad539303ef778c5177842c062044123f42486d9ed7f00  tasks/temperature/task.reason.yaml  2035
+e7f7e12fb89fed79c6b0ec0c3c65b0ef8bf38bba64384d1b45e402698ed390c0  shared/ref/cbc1215f_calibration_14B-R.json  6928  (added)
+e4b097dfbfb4a97ad0b436aa20bbeaf99378e8789d83ead3d4c833e4721312cb  tasks/assemble-public.sh  1823  (added)
 ```

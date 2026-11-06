@@ -18,4 +18,12 @@ Varphi by Hassan El-Sheikha; Ampliphi by Hassan El-Sheikha, Kevin Thevara and Yo
 Code (everything under `benchmark-corpus/build/`, `eval-harness/`, `verification/`, and
 `core/paper/figures/make_figures.py`) is licensed separately under the MIT License (`LICENSE`).
 
-The sealed holdout split is **not** released under any license; see `sealed-holdout/README.md`.
+Model outputs are additionally subject to the licenses of the models that produced
+them, which this grant cannot enlarge. Qwen2.5-0.5B/1.5B/7B/14B-Instruct are Apache 2.0
+and the DeepSeek-R1 distills are MIT, but **Qwen2.5-3B-Instruct is released under the
+Qwen Research License** (research or evaluation use; outputs used to create, train or
+improve a model must display "Built with Qwen"), so the 3B transcripts and per-item
+records in `results/` carry those terms alongside CC BY 4.0.
+
+The private holdout split is **not** released under any license; see
+`sealed-holdout/README.md` and `sealed-holdout/STATUS.md`.

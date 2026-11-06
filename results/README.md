@@ -12,7 +12,11 @@ sha256 lines in `MANIFEST.md` are the provenance record.
   transcripts.
 - `controls/` — the derived control blocks and their summaries: the matched
   pseudocode control, the partial-trace probe, the rejection log from the
-  derivation, and the bootstrap output.
+  derivation, and the bootstrap output. One known gap: the prompt *template* that
+  wrapped the pseudocode control's items is in neither this repository nor the
+  agent's export — only the rendered pseudocode in `control_c4.jsonl` survives
+  (each result still records the digest of the prompt it used). The C4 condition
+  therefore cannot be re-run verbatim from this artifact, only re-scored.
 
 ## How to read a result file
 

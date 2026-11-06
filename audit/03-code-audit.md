@@ -1,5 +1,7 @@
 # Code audit: gates, parser, scorer, self-tests
 
+> **Correction notice (2026-11-06).** The parser verdict below (“behaves as §3 promises on the core cases”) predates finding **F21**: `parse.py`'s brace-depth scan mis-scored 61 correct replies from the reasoning-distilled models (an unmatched `{` quoted inside a reasoning block hid the final answer object). The released parser was corrected in commit `a3f5526`; the original is kept as `parse_as_generated.py`, and `audit/reanalysis-2026-10-24/` holds the re-scoring. F15's adversarial table below missed this defect. The rest of this document stands.
+
 Session 2, 2026-08-31. Everything below was established by reading the shipped code and running it: the Ampliphi toolchain (`ampliphi==1.0.0`, `varphi-python==2.0.6`) installs from PyPI under Python 3.13 exactly as `build/bootstrap.py` expects, so the corpus build's own self-test ran against the real compiler. Verdicts follow the audit convention: wrong / matters / fix.
 
 ## 1. The six admission gates against §3

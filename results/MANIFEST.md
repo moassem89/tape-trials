@@ -5,7 +5,7 @@
 result value in it was changed, and the hash is of the copy shipped here.
 
 ```
-eb98348695a612cf8e3d8286435bbc030781a10be787a40c90204db753ef8624  README.md  1543
+43fbbe04f1193ce57af5ab622ca11f52bfad005177b03c592d5d7a0b7a86de4f  README.md  1900
 206a68c5de9ea924e93194f1a00a4474f0ff83a8655a6425aa06331415aaf02b  controls/control_bootstrap.json  2027
 139c98fce41746bd7268a4a1b42f2dbc7df3bba481fb078b26f03020af5b730f  controls/control_c4.jsonl  214117
 4c9a305711a5fa4de434b4db3c9ff3a3d89415501ff8f40029892e01b5fdbbcb  controls/control_c6.jsonl  193897
@@ -272,5 +272,5 @@ and their hashes above are of the redacted copies.
 1fd8de829d11f4abba22cb6004a951a63f929c0cb234e8da94f942f907fca4fa  run-records/c8-original-14B-R/README.md  1290
 e7f7e12fb89fed79c6b0ec0c3c65b0ef8bf38bba64384d1b45e402698ed390c0  run-records/c8-original-14B-R/calibration_14B-R.json  6928
 495603ce05c43b59681242fe0e191c3ad2a99bae49764e46299a059442f2eea2  run-records/c8-original-14B-R/per_row_confidence_14B-R.jsonl  91632
-fb5591ee3bf853e700753462ac437777b3579116561836831cdb7a4af8407cd4  run-records/evidence/SUPERSEDED.md  2370
+927c56b6fd055919ec3244d485d4c25d9d41c66d5c92a39f4b377189c7a7e80c  run-records/evidence/SUPERSEDED.md  2625
 ```

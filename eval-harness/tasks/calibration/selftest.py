@@ -18,8 +18,16 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-sys.path.insert(0, str(ROOT / "s4-data-preparation" / "harness"))
-sys.path.insert(0, str(HERE.parent / "_shared"))
+# Original workspace layout first; this repository's layout as the fallback
+# (added after generation, see ../../CHANGES.md).
+_harness = ROOT / "s4-data-preparation" / "harness"
+if not _harness.exists():
+    _harness = HERE.parents[1] / "harness"
+sys.path.insert(0, str(_harness))
+_shared = HERE.parent / "_shared"
+if not _shared.exists():
+    _shared = HERE.parents[1] / "shared"
+sys.path.insert(0, str(_shared))
 
 
 class _Lab:
@@ -165,6 +173,8 @@ def build_fixture(root):
         "".join(json.dumps(r) + "\n" for r in rows))
     (root / "prompts").mkdir(parents=True, exist_ok=True)
     src = ROOT / "s4-data-preparation" / "prompts"
+    if not src.exists():
+        src = ROOT / "benchmark-corpus" / "prompts"
     for name in ("P1_frozen.txt", "P6_confidence.txt"):
         shutil.copy(src / name, root / "prompts" / name)
     return plan, rows

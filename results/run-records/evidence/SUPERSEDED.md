@@ -7,7 +7,10 @@ values are superseded in the revised paper (`paper/main.tex`): the parser correc
 analyses were redone (the paper's Appendix A lists the corrections). Check the revised
 paper's numbers against `verification/rescore_transcripts.py`, not against this ledger.
 
-The entries a reader is most likely to compare, with their revised values:
+The table below lists the entries a reader is most likely to compare, with their
+revised values. It is illustrative, not exhaustive: the ledger has hundreds of
+entries, and no attempt is made to annotate every one — the rule above (trust the
+revised paper and the verification scripts, not the ledger) is the complete guidance.
 
 | id | ledger | revised |
 |---|---|---|

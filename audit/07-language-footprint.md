@@ -1,5 +1,7 @@
 # Varphi/AmpliPhi public footprint — dated facts and what they mean for the paper
 
+> **Correction notice (2026-11-06).** Two dated claims below are superseded. Varphi's earliest public trace is **not** “≈ fall 2025”: its documentation site has been online since January 2025 (per its creator), it was described at WCCCE in April 2025 (El-Sheikha and Mahmoud, DOI 10.60770/wzt9-s649), and its first PyPI packages (`varphi-devkit` 1.0.0, then `varphi-python` 1.0.0) appeared on 3 and 31 August 2025. And contamination resistance for future models does **not** rest on the sealed holdout or a canary: the corpus is deterministic given its published seed, so the holdout is reconstructible from this repository and its rows carry no canary (findings F27/F28 in `audit/00-findings-index.md`). The paper's §3 states the corrected dates and argument. The rest of this document stands.
+
 Opened 2026-09-10 after the language author announced an online compiler/simulator for both languages. Facts below were fetched live (docs.varphi-lang.com, github.com/varphi-lang); PyPI's JSON API was robots-blocked to the fetcher, so PyPI-side dates should be confirmed in the citation session by other means.
 
 ## The timeline that matters
