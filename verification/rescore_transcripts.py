@@ -26,6 +26,7 @@ both versions of every number stay reproducible.
 from __future__ import annotations
 
 import argparse
+from fractions import Fraction
 import ast
 import json
 import math
@@ -46,7 +47,7 @@ CONFIGS = [  # display name, transcript slug
 ]
 # Revised paper (corrected parser). Draft values follow in DRAFT, used with --as-generated.
 TABLE1 = {  # holdout %, public %
-    "14B-R": (95.7, 96.9), "7B-R": (82.6, 83.7), "14B-CoT": (79.2, 79.0), "14B": (21.5, 19.8),
+    "14B-R": (95.7, 96.9), "7B-R": (82.6, 83.7), "14B-CoT": (79.2, 79.0), "14B": (21.5, 19.7),
     "7B": (13.8, 13.5), "3B": (9.7, 9.4), "1.5B": (3.4, 3.5), "0.5B": (0.2, 0.1),
 }
 TABLE2 = {"14B-R": 98.3, "14B-CoT": 91.7, "7B-R": 93.5, "14B": 70.9, "7B": 64.6,
@@ -67,8 +68,14 @@ TABLE4_14BR = {"P1_frozen": 0.9538, "P2_reference_card": 0.9874, "P3_tutorial": 
                "P4_formal_rules": 0.9748, "P5_inverted": 0.9958}
 WRONG_ROWS = 8726
 
+def pct1(k, n):
+    """100*k/n rounded half up to one decimal, from the exact fraction (as the paper prints it)."""
+    tenths = Fraction(1000 * k, n) + Fraction(1, 2)
+    return math.floor(tenths) / 10
+
+
 DRAFT = dict(  # the agent's draft (core/paper/paper.tex), reproduced by the as-generated parser
-    TABLE1={**{}, "14B-R": (95.7, 96.4), "7B-R": (81.2, 82.3)},
+    TABLE1={**{}, "14B-R": (95.7, 96.4), "7B-R": (81.2, 82.3), "14B": (21.5, 19.8)},
     TABLE2={"7B-R": 91.5},
     TABLE3={"7B-R": [97.5, 79.5, 76.7, 84.3, 63.0, 90.6]},
     FIGURE1={"7B-R": [.872, .812, .822, .778, .778]},
@@ -180,10 +187,14 @@ def main():
         hs = f"{100*h:8.2f}" if h is not None else f"{'withheld':>8}"
         ps = f"{100*p:8.2f}" if p is not None else f"{'missing':>8}"
         flag = ""
-        if h is not None:
-            flag += check(abs(100 * h - TABLE1[name][0]) < 0.06)
-        if p is not None:
-            flag += check(abs(100 * p - TABLE1[name][1]) < 0.06)
+        for frac, key, col in ((h, (name, "private"), 0), (p, (name, "public"), 1)):
+            if frac is None:
+                continue
+            if args.as_generated:  # the draft printed rounded job-card values; allow its rounding
+                flag += check(abs(100 * frac - TABLE1[name][col]) < 0.06)
+            else:  # the revised paper prints the exact fraction rounded half up to one decimal
+                n = cells[key]["n"]
+                flag += check(pct1(round(frac * n), n) == TABLE1[name][col])
         print(f"{name:8} {hs} {TABLE1[name][0]:6.1f} {ps} {TABLE1[name][1]:6.1f}{flag}")
 
     if have_private:

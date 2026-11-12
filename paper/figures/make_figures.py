@@ -34,14 +34,14 @@ for lab, _ in CFG:
         s = [r["exact_match"] for r in rows[lab] if qi(r["exec_steps"]) == i]
         ys.append(100 * sum(s) / len(s))
     ls = "--" if lab == "7B-R" else "-"
-    plain = lab in GREYS
+    plain = lab in GREYS  # the five Qwen2.5-Instruct models under the answer-only prompt
     ax.plot(med, ys, ls, marker="o", markersize=4, linewidth=1.6, color=COLOR[lab],
             markeredgecolor="white", markeredgewidth=0.8, label=(lab if plain else None))
     print(lab, [round(y, 1) for y in ys])
     if not plain:
         ax.annotate(lab, (med[-1], ys[-1]), xytext=(6, 0), textcoords="offset points",
                     va="center", fontsize=7.5, color=INK)
-ax.legend(title="plain, frozen prompt", title_fontsize=7.5, fontsize=7.5, frameon=False,
+ax.legend(title="Qwen2.5-Instruct,\nanswer-only prompt", title_fontsize=7.5, fontsize=7.5, frameon=False,
           loc="center right", bbox_to_anchor=(1.0, 0.36))
 ax.set_xscale("log"); ax.set_xticks(med); ax.set_xticklabels([f"{m:,.1f}" if m % 1 else f"{int(m):,}" for m in med]); ax.minorticks_off()
 ax.set_xlim(med[0] / 1.25, med[-1] * 2.2)
@@ -76,10 +76,10 @@ for yi, (lab, b, lo, hi) in zip(y, res):
     ax.text(max(hi, b, 0) + 8, yi, f"{b:+.1f}", va="center", ha="left", fontsize=7.5, color=INK)
 ax.axvline(0, color=INK2, linewidth=0.7)
 ax.set_yticks(y); ax.set_yticklabels([r[0] for r in res])
-ax.set_xlabel("Reply-length slope (words per decade of executed steps)")
+ax.set_xlabel("Reply length: words added per tenfold increase in executed steps")
 ax.set_xlim(-80, 620)
 h = [plt.Rectangle((0, 0), 1, 1, color=c) for c in (BLUE, ORANGE, GREYS["7B"])]
-ax.legend(h, ["reasoning-distilled", "plain 14B, tracing prompt", "plain, frozen prompt"],
+ax.legend(h, ["reasoning-distilled", "14B, tracing prompt", "Qwen2.5-Instruct, answer-only prompt"],
           frameon=False, fontsize=7.5, loc="lower right")
 fig.tight_layout(); fig.savefig("tokens.png", bbox_inches="tight"); plt.close(fig)
 json.dump(res, open("slopes.json", "w"), indent=1)
