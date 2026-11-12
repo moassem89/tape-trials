@@ -37,7 +37,7 @@ autonomous research agent operated by Transformer Lab. A pilot preceded the stud
 was drafted with Claude's assistance from design decisions that the first author made
 and approved, and the agent received its evaluation prompt, ten sample programs and
 evaluation guide as inputs. Primus produced the experiments, code, analyses and a first
-draft, including the post-hoc synthesis, which the authors reviewed and reframed. The
+draft, including a post-hoc interpretation of the results as a whole, which the authors reviewed and reframed. The
 authors then audited the work with assistance from Claude (Anthropic) for re-computation,
 code audit and citation checking: every number was re-derived from raw model transcripts
 and run records, a scoring defect was found and corrected, and the within-tier,
@@ -990,7 +990,7 @@ tracing prompt, so we do not know how the gain from size would compare with the 
 were allowed to write a trace. Under the answer-only prompt, the comparison also depends on
 the scoring rule and on which sizes are compared (Table~\ref{tab:partial}).
 
-\paragraph{What differs between the two prompts.} The gain from the tracing prompt bundles
+\paragraph{What differs between the two prompts.} The gain from the tracing prompt combines three changes:
 permission to explain, an instruction to trace and a higher output-length limit
 (\S\ref{sec:measures}); only the effect of the higher limit is bounded. The tracing
 instruction may also cause the procedure-order error described in \S\ref{sec:results}.
@@ -1070,7 +1070,7 @@ the models we tested should not be used to decide when to trust them.
 \section*{Reproducibility and Availability}
 Code, generator, filters, the corrected parser, the reference interpreter, public and
 development splits, prompts, raw model transcripts for every public-split run except the
-six control runs of the instruction-tuned models (for which only aggregates were
+six control runs of the instruction-tuned models (for which only totals per run were
 recorded), run records and an item-level audit are released \ifanon in the anonymised
 supplementary material\else at \url{https://github.com/moassem89/tape-trials}\fi{} under
 MIT (code) and CC BY 4.0 (data and results). The directory \texttt{verification/} also
@@ -1206,8 +1206,8 @@ capability. Correction~17 withdraws the ranking.
 average over the full split instead of the same items. On the same items, the pseudocode
 effect is $-2.9$ to $+3.3$ points (draft: 0.6 to 1.5). The 14B, 7B and 3B models under
 the answer-only prompt score 0 on the full-length items of the suffix control (draft:
-``roughly doubles''). The suffix control gives the model the machine state at a cut,
-not ``the first half of a trace''.
+``roughly doubles''). The suffix control gives the model the value of every variable part-way through the
+execution, not ``the first half of a trace''.
 \item The draft stated that neither distilled model has a sharp drop in accuracy and
 took the curve across step quintiles as an effect of step count; because the quintiles
 differ in the kinds of programs they contain, the within-program comparison was added.
